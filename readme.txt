@@ -4,7 +4,7 @@ Tags: div, html, tag, html tag, format, formatting
 Requires at least: 2.9
 Tested up to: 4.1
 License: BSD License
-License URI: https://github.com/leandroarndt/diver/license.txt
+License URI: https://github.com/leandroarndt/diver/raw/master/license.txt
 
 Add HTML div tags directly on the visual editor. Supports css classes and media embedding parameters.
 
