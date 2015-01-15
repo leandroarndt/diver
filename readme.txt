@@ -24,11 +24,11 @@ Diver development home: http://github.com/leandroarndt/diver/
 == Frequently Asked Questions ==
 
 1. Does [div] shortcode allow code injection?
-No. All content from \"class\" and \"embed\" parameters is filtered and quotes are substituted by the corresponding HTML entities.
+No. All content from \"class\" and \"embed\" parameters is sanitized and quotes are substituted by the corresponding HTML entities.
 
 2. May the user create a CSS style different from those on the stylesheet?
 No. Diver Wordpress plugin is intended to respect theme styles and be away from direct style definitions. Style definition and content shouldn\'t be mixed up, should them?
 
 == Changelog ==
 
-* 2015-01-15: First commit.
+* 2015-01-15: First release.

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Diver
  * Plugn URI: http://github.com/leandroarndt/diver/
- * Description: Adds <div> tags directly in the visual editor.
+ * Description: Adds HTML div tags directly in the visual editor.
  * Version: 0.1
  * Author: Leandro Arndt
  * Author URI: http://www.caritasinveritate.teo.br/
@@ -34,22 +34,38 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ******************************************************************************/
 
-// Avoid using away from WP
-defined( 'ABSPATH' ) OR DIE( 'Not running Wordpress?' );
-
 // We need this inclusion in order to use the "embed" parameter
-require_once( ABSPATH . WPINC . 'media.php' );
+require_once( ABSPATH . WPINC . '/media.php' );
 
 // Shortcode
 function div_shortcode( $atts, $content='' ) {
+	// Prepares arguments
 	$a = shortcode_atts( array(
-		'float' => 'left',
-		'embed' => 'false'
+		'embed' => false,
+		'class' => '',
 	), $atts );
+	$a['class'] = htmlentities( $a['class'] );
+	
 	if ( $a['embed'] ) {
-		return '<div class="float'.$a['float'].' '.$a['class'].'" style="'.$a['style'].'">'.wp_oembed_get($a['embed']).$content.'</div>';
+		$a['embed'] = htmlentities( $a['embed'] );
+		$embed = wp_oembed_get( $a['embed'] );
+		if ( $embed ) {
+			return '<div class="'.$a['class'].'">'.$embed.'
+			
+			'.$content.'
+			
+			</div>';
+		} else {
+			return '<div class="'.$a['class'].'">
+			
+			'.$a['embed'].'
+			
+			'.$content.'
+			
+			</div>';
+		}
 	} else {
-		return '<div class="float'.$a['float'].' '.$a['class'].'" style="'.$a['style'].'">
+		return '<div class="'.$a['class'].'">
 		
 		'.$content.'
 		
