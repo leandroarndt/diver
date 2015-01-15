@@ -3,7 +3,7 @@
  * Plugin Name: Diver
  * Plugn URI: http://github.com/leandroarndt/diver/
  * Description: Adds HTML div tags directly in the visual editor.
- * Version: 0.1
+ * Version: 1.0
  * Author: Leandro Arndt
  * Author URI: http://www.caritasinveritate.teo.br/
  * License: BSD
