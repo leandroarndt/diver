@@ -45,3 +45,4 @@ should them?
 
 * 2015-01-15: First release.
 * 2015-01-21: Better readme.txt formatting.
+* 2016-02-04: readme.txt changes.
