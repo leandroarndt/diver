@@ -74,5 +74,4 @@ function div_shortcode( $atts, $content='' ) {
 }
 
 add_shortcode( 'div', 'div_shortcode' );
-
 ?>
